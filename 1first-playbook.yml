@@ -1,0 +1,12 @@
+---
+- name: first play
+  hosts: nodes
+  tasks:
+    - name: create a new file
+      file:
+        path: /tmp/foo.conf
+        mode: 0664
+        owner: eprmkau
+        state: touch
+    - name: create groups
+      import_tasks: 3group-tasks.yml
