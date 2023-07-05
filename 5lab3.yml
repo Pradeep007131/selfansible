@@ -1,0 +1,22 @@
+---
+- name: first play
+  hosts: nodes
+  tasks:
+    - name: install nmap
+      package:
+        name: nmap
+        state: present
+    
+    - name: create an archive
+      archive:
+        path: /home
+        dest: /tmp/home.tar.gz
+        format: gz
+
+#- name: second play
+#  hosts: worker
+#  tasks:
+#    - name: install git
+#      package:
+#        name: git
+#        state: present
